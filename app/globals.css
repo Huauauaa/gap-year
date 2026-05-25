@@ -1,0 +1,48 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+:root {
+  color-scheme: light;
+  --background: #fff8ee;
+  --foreground: #24170f;
+}
+
+@theme {
+  --font-sans: "Inter", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  --font-serif: "Noto Serif SC", "Songti SC", "STSong", Georgia, serif;
+  --color-paper: #fff8ee;
+  --color-ink: #24170f;
+  --color-copper: #a85f32;
+  --color-mist: #f3e3d0;
+  --color-night: #171311;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(circle at top left, rgba(232, 168, 96, 0.22), transparent 34rem),
+    linear-gradient(180deg, #fff8ee 0%, #f7ead8 52%, #fffaf4 100%);
+  color: var(--foreground);
+}
+
+::selection {
+  background: rgba(168, 95, 50, 0.22);
+}
+
+.prose :where(h1, h2, h3) {
+  font-family: var(--font-serif);
+  letter-spacing: 0.04em;
+}
+
+.prose :where(p) {
+  line-height: 2.05;
+}
