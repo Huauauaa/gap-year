@@ -74,8 +74,7 @@ function parseChapter(fileName: string): Chapter {
   const frontMatter = data as FrontMatter;
   const slug = fileName.replace(/\.md$/, "");
   const title = asString(frontMatter.title, slug);
-  const fallbackExcerpt = stripMarkdown(excerpt ?? content.split(/
-{2,}/)[0] ?? "");
+  const fallbackExcerpt = stripMarkdown(excerpt ?? content.split(/\n{2,}/)[0] ?? "");
 
   return {
     slug,
